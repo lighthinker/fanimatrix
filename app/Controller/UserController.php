@@ -22,7 +22,7 @@ class UserController extends BaseController
 		 * pour pouvoir accéder à la liste des utilisateurs
 		 */
 		
-		$this->allowTo(['admin', 'superadmin']);
+		$this->allowTo(['neo', 'neo2.0','architecte']);
 		
 		$usersModel = new UtilisateursModel();
 		
