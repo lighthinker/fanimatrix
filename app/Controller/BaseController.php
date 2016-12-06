@@ -3,7 +3,7 @@
 namespace Controller;
 
 use \W\Controller\Controller;
-use Model\SalonsModel;
+use Model\UtilisateursModel;
 use \Plasticbrain\FlashMessages\FlashMessages;
 
 class BaseController extends Controller
@@ -31,16 +31,17 @@ class BaseController extends Controller
 
 		$app = getApp();
 
-		$salonsModel = new SalonsModel();
+		$utilisateursModel = new UtilisateursModel();
 		$this->fmsg = new FlashMessages();
+                
 		// Rend certaines données disponibles à tous les vues
 		// accessible avec $w_user & $w_current_route dans les fichiers de vue
 		$this->engine->addData(
 			[
 				'w_user' 		  => $this->getUser(),
-				'w_current_route' => $app->getCurrentRoute(),
-				'w_site_name'	  => $app->getConfig('site_name'),
-				'salons'		  => $salonsModel->findAll(),
+				'w_current_route'         => $app->getCurrentRoute(),
+				'w_site_name'	          => $app->getConfig('site_name'),
+				'salons'		  => $utilisateursModel->findAll(),
 				'fmsg'			  => $this->getFlashMessenger()
 			]
 		);
