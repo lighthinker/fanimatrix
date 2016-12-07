@@ -7,7 +7,7 @@ use W\Security\AuthentificationModel;
 use \Respect\Validation\Validator as v;
 use \Respect\Validation\Exceptions\ValidationException;
 
-class UserController extends BaseController
+class UtilisateurController extends BaseController
 {
 	/**
 	 * Cette fonction sert à afficher la liste des utilisateurs
@@ -33,7 +33,7 @@ class UserController extends BaseController
 		$this->show('users/list', array('listUsers' => $usersList));
 	}
 	
-	public function login() {
+	public function connexion() {
 //		 on va utiliser le model d'Authentification et plus particulièrement
 //		 la méthode isValidLoginInfos à laquelle on passera en param
 //		 le pseudo/email et le password envoyés en post par l'utilisateur
@@ -79,16 +79,16 @@ class UserController extends BaseController
 			
 		}
 		
-		$this->show('users/login', array('datas' => isset($_POST) ? $_POST : array()));
+		$this->show('users/connexion', array('datas' => isset($_POST) ? $_POST : array()));
 	}
 	
 	public function logout() {
 		$auth = new AuthentificationModel();
 		$auth->logUserOut();
-		$this->redirectToRoute('login');
+		$this->redirectToRoute('utilisateur_connexion');
 	}
 	
-	public function register() {
+	public function inscription() {
 		
 		$user = $this->getUser();
 		
@@ -239,7 +239,7 @@ class UserController extends BaseController
 			}
 		}
 		
-		$this->show('users/register',  array('datas' => $datas));
+		$this->show('users/inscription',  array('datas' => $datas));
 	}
 
 }

@@ -5,7 +5,7 @@
 <h2>Connectez-vous à T'Chat</h2>
 
 
-<form action="<?php $this->url('login') ?>" method="POST">
+<form action="<?php $this->url('utilisateur_connexion') ?>" method="POST">
 	<p>
 		<label for="pseudo">
 			Pseudo :

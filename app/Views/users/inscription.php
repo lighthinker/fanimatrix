@@ -19,7 +19,7 @@ function afficherCheck( $valeurAttendue ) {
 
 
 
-<form action="<?php $this->url('register'); ?>" method="POST" enctype="multipart/form-data">
+<form action="<?php $this->url('utilisateur_inscription'); ?>" method="POST" enctype="multipart/form-data">
 	<!-- pseudo, email, password, sexe, avatar -->
 	<p>
 		<label for="pseudo">Pseudo :</label>
@@ -35,6 +35,11 @@ function afficherCheck( $valeurAttendue ) {
 	<p>
 		<label for="mot_de_passe">Mot de passe :</label>
 		<input type="password" name="mot_de_passe" id="mot_de_passe" value="<?php afficherPost('mot_de_passe'); ?>" />
+		
+	</p>
+        <p>
+		<label for="mot_de_passe">Mot de passe à nouveau :</label>
+		<input type="password" name="mot_de_passe_confirmation" id="mot_de_passe" value="<?php afficherPost('mot_de_passe_confirmation'); ?>" />
 		
 	</p>
 	<p>
