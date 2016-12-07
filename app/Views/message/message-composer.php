@@ -2,20 +2,17 @@
 
 <?php $this->start('main_content'); ?>
 
-<h2>Connectez-vous à T'Chat</h2>
+<h2>Message Privé</h2>
 
 
 <form action="<?php $this->url('default_home') ?>" method="POST">
 
-		<input type="text-area" 
-			   name="texte" 
-			   id="texte" 
-			   value=""/>
+	
+        <textarea class="form-control" rows="5" id="msg"></textarea>
 
 	<p>
-		<input type="submit" class="button" value="Me connecter"/>
-		<a class="button" href="#" title="envoyer votre message">
-			Pas encore inscrit ?
+		<input type="submit" class="button" value="Envoyer"/>
+                <a class="button" href="#" title="envoyer votre message">
 		</a>
 	</p>
 
