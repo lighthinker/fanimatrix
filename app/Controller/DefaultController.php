@@ -2,17 +2,18 @@
 
 namespace Controller;
 
-use \W\Controller\Controller;
+use Model\ArticleModel;
+use Model\CommentaireModel;
 
-class DefaultController extends Controller
+
+class DefaultController extends BaseController
 {
-
 	/**
 	 * Page d'accueil par défaut
 	 */
 	public function home()
 	{
-		$this->show('default/home');
+               
+		$this->show('firstPage/choosePill');
 	}
-
 }

@@ -241,5 +241,9 @@ class UtilisateurController extends BaseController
 		
 		$this->show('users/inscription',  array('datas' => $datas));
 	}
+        
+        public function actionProfil() {
+            $this->show('users/profil');
+        }
 
 }

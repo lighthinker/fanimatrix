@@ -11,7 +11,7 @@ function afficherCheck( $valeurAttendue ) {
     echo (!empty($_POST['sexe']) && $_POST['sexe'] == $valeurAttendue) ? 'checked' : '';
 } ?>
 
-<?php $this->layout('layout', ['title' => 'Inscrivez-vous !']) ?>
+<?php $this->layout('layoutEmpty', ['title' => 'Inscrivez-vous !']) ?>
 
 <?php $this->start('main_content'); ?>
 

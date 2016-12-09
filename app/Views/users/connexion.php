@@ -1,4 +1,4 @@
-<?php $this->layout('layout', ['title' => 'Connectez-vous !']); ?>
+<?php $this->layout('layoutEmpty', ['title' => 'Connectez-vous !']); ?>
 
 <?php $this->start('main_content'); ?>
 
