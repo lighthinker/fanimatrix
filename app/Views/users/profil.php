@@ -2,7 +2,7 @@
 <?php $this->layout('layout', ['title' => 'Inscrivez-vous !']) ?>
 
 <?php $this->start('main_content'); ?>
-
+<?php var_dump($articlesByUser); ?>
 <h2>Pages profil</h2>
 
 <h3> Bienvenue <?php $w_user ?></h3>
@@ -22,9 +22,11 @@
       </p>
        <p>
 		<input type="submit" class="button" value="Valider"/>
-		<a class="button" href="#" title="Con">
-			Pas encore inscrit ?
-		</a>
+		
+	</p>
+        
+        <p>
+            <li></li>
 	</p>
         
 <?php $this->stop('main_content'); ?>

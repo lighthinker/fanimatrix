@@ -49,6 +49,7 @@
 						
 						<li><a href=""><i class="fa fa-sign-out" id="deconIcon" aria-hidden="true"></i></a>
 						</li>
+                                                <li>Utilisateurs : <?php echo $w_user ?></li>
 					</ul>
 			
 				</nav>

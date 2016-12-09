@@ -243,7 +243,12 @@ class UtilisateurController extends BaseController
 	}
         
         public function actionProfil() {
-            $this->show('users/profil');
+            $allArticleByUser = new \Model\ArticleModel();
+            $user = $this->getUser();
+            $userId = $user['id'];
+            $articlesByUser = $allArticleByUser->getArticlesByUser(); // a mettre dans le parametre function $userId
+            
+            $this->show('users/profil', ['articlesByUser' => $articlesByUser]);
         }
 
 }
