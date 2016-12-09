@@ -41,6 +41,7 @@
 								</ul>
 							<li><a href="">LES SYMBOLIQUES</a></li>
 							<li><a href="">FAN MADE</a></li>
+                                                        <li><a href="<?php echo $this->url('profil') ?>">MA MATRICE</a></li>
                                                        
 						</ul>
 
@@ -55,7 +56,7 @@
 			</header>
  
                     <main><?= $this->section('main_content') ?></main>
-             <?php var_dump($w_current_route); ?>
+            
             <?php if($w_current_route !='profil'):?>       
             <div id="rigthCol">
 

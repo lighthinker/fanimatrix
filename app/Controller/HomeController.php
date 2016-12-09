@@ -6,7 +6,7 @@ use Model\ArticleModel;
 use Model\CommentaireModel;
 
 
-class DefaultController extends BaseController
+class HomeController extends BaseController
 {
 	/**
 	 * Page d'accueil par défaut
