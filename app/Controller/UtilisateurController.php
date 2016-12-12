@@ -141,7 +141,7 @@ class UtilisateurController extends BaseController
 			);
 			
 			$datas = $_POST;
-			
+			var_dump($datas);
 			// on ajouter le chemin vers le fichier d'avatar qui a été uploadé
 			// (s'il y en a un)
 			
@@ -231,12 +231,13 @@ class UtilisateurController extends BaseController
 						$this->getFlashMessenger()->warning('Nous n\'avons pas été en mesure de vous reconnecter');
 					}
 				} else {
-					$this->getFlashMessenger()->success('Vous vous êtes bien inscrit à T\'Chat !');
+					$this->getFlashMessenger()->success('Vous vous êtes bien inscrit à la matrice !');
+                                        var_dump($datas); 
 					$userInfos = $utilisateursModel->insert($datas);
 					$auth->logUserIn($userInfos);
 				}
 				
-				$this->redirectToRoute('default_home');
+				$this->redirectToRoute('utilisateur_inscription');
 			}
 		}
 		
