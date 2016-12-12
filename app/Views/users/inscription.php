@@ -15,28 +15,38 @@ function afficherCheck( $valeurAttendue ,$datas) {
 
 <?php $this->start('main_content'); ?>
 
-<h2><?php if(!$w_user): ?>Inscription d'un utilisateur<?php else: ?>Votre profil<?php endif; ?></h2>
+<h2>Tu as fais le bon choix. Donne nous toutes tes informations te concernant et laisse toi guider dans la matrice.</h2>
+
+<?php  
+$longueurKey = 12;
+$key = "";
+for($i=1; $i<$longueurKey; $i++){
+    $key .= mt_rand(0,9);
+}
+echo $key;
+
+?>
 
 <form action="<?php $this->url('utilisateur_inscription'); ?>" method="POST" enctype="multipart/form-data">
 	<!-- pseudo, email, password, sexe, avatar -->
 	<p>
 		<label for="pseudo">Pseudo :</label>
-		<input type="text" name="pseudo" id="pseudo" 
-			   placeholder="3 à 50 caractères"
-			   value="<?php afficherData('pseudo',$datas); ?>"/>
+		<input type="text" name="pseudo" id="pseudo" value="<?php afficherData('pseudo',$datas); ?>"/>
 	</p>
 	<p>
 		<label for="email">Email :</label>
 		<input type="email" name="email" id="email" value="<?php afficherData('email',$datas); ?>"/>
-		
 	</p>
 	<p>
 		<label for="mot_de_passe">Mot de passe :</label>
-		<input type="password" name="mot_de_passe" id="mot_de_passe" value="<?php afficherData('mot_de_passe',$datas); ?>" />
-		
+                <input type="password" name="mot_de_passe" id="mot_de_passe" placeholder="au moins 6 caractères" value="<?php afficherData('mot_de_passe',$datas); ?>" />
+	</p>
+        <p>
+		<label for="mot_de_passe_again">Mot de passe à nouveau :</label>
+		<input type="password" name="mot_de_passe_again" id="mot_de_passe_again" value="<?php afficherData('mot_de_passe_again',$datas); ?>" />
 	</p>
 	<p>
-		<label for="femme">Femme :</label>
+		<label for="sexe">Sexe :</label>
 		<select name="sexe">
 			<option value="femme" <?php afficherCheck('femme',$datas); ?>>Femme</option>
 			<option value="homme" <?php afficherCheck('homme',$datas); ?>>Homme</option>
@@ -49,7 +59,13 @@ function afficherCheck( $valeurAttendue ,$datas) {
 		
 	</p>
 	<p>
-		<input type="submit" name="send" value="<?php if(!$w_user):  ?>S'inscrire<?php else: ?>Modifier<?php endif; ?>" />
+		<input type="submit" name="send" value="S'inscrire" />
+	</p>
+        <p>
+                Vous possédez déjà un compte ?
+		<a class="button" href="<?php echo $this->url('utilisateur_connexion') ?>" title="Accéder à la page de connexion">
+			Identifiez-vous
+		</a>   
 	</p>
 </form>
 

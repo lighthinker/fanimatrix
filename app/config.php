@@ -20,10 +20,10 @@ $w_config = [
         'security_ville_property' => 'ville',
         'security_age_property' => 'age',
 
-	'security_login_route_name' => 'login',			//nom de la route affichant le formulaire de connexion
+	'security_login_route_name' => 'utilisateur_connexion',			//nom de la route affichant le formulaire de connexion
 
 	// configuration globale
-	'site_name'	=> 'mYtrix', 								// contiendra le nom du site
+	'site_name'	=> 'chooseyourpill', 								// contiendra le nom du site
 ];
 
 require('routes.php');

@@ -13,16 +13,14 @@ class UtilisateurController extends BaseController
 	 * Cette fonction sert à afficher la liste des utilisateurs
 	 */
 	public function listUsers() {
-//		$usersList = array(
-//			'Googleman', 'Pausewoman', 'Pauseman', 'Roland'
-//		);
+//		
 		
 		/*
 		 * Ici j'instancie depuis l'action du contrôleur un modèle d'utilisateurs
 		 * pour pouvoir accéder à la liste des utilisateurs
 		 */
 		
-		$this->allowTo(['neo', 'neo2.0','architecte']);
+		$this->allowTo(['neo','architecte']);
 		
 		$usersModel = new UtilisateursModel();
 		
@@ -124,7 +122,7 @@ class UtilisateurController extends BaseController
 				
 				'email' => $emailValidator,
 				
-				'mdp' => v::length(3,50)
+				'mdp' => v::length(6,50)
 					->alnum()
 					->noWhiteSpace()
 					->setName('Mot de passe'),
@@ -160,7 +158,7 @@ class UtilisateurController extends BaseController
 				'alnum' => '{{name}} ne doit contenir que des caractères alphanumériques',
 				'size' => '{{name}} doit avoir une taille comprise entre {{minSize}} et {{maxSize}}',
 				'upload' => '{{name}} n\'a pas été uploadé correctement',
-				'length' => '{{name}} doit avoir une longueur comprise entre {{minValue}} et {{maxValue}} caractères',
+				'length' => '{{name}} doit contenir au moins {{minValue}} caractères ',
 				'noWhitespace' => '{{name}} ne doit pas contenir d\'espace vide',
 				'in' => '{{name}} doit être compris dans {{haystack}}',
 				'image' => '{{name}} doit être une image',
@@ -230,12 +228,12 @@ class UtilisateurController extends BaseController
 						$this->getFlashMessenger()->warning('Nous n\'avons pas été en mesure de vous reconnecter');
 					}
 				} else {
-					$this->getFlashMessenger()->success('Vous vous êtes bien inscrit à T\'Chat !');
+					$this->getFlashMessenger()->success('Vous vous êtes bien inscrit dans la matrice !');
 					$userInfos = $utilisateursModel->insert($datas);
 					$auth->logUserIn($userInfos);
 				}
 				
-				$this->redirectToRoute('default_home');
+				$this->redirectToRoute('home');
 			}
 		}
 		

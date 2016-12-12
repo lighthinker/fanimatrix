@@ -8,12 +8,12 @@ namespace Validation\Rules;
  */
 
 use Respect\Validation\Rules\AbstractRule;
-use W\Model\UsersModel;
+use Model\UtilisateursModel;
 
 class UsernameNotExists extends AbstractRule {
 	
 	public function validate($pseudo) {
-		$userModel = new UsersModel();
+		$userModel = new UtilisateursModel();
 		return ! $userModel->usernameExists($pseudo);
 	}
 }

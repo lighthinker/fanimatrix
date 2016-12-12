@@ -11,9 +11,6 @@
 *Ce code est un test pour envoyer un mail en php !
 */
 
-
-
-
 if(isset($_POST['mailform'])){
 
 $header="MIME-Version: 1.0\n";

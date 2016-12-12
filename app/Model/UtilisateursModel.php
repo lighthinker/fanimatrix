@@ -7,10 +7,10 @@
  */
 
 namespace Model;
-use W\Model\UsersModel ;
+use W\Model\Model ;
 use W\Model\ConnectionModel;
 
-class UtilisateursModel extends UsersModel
+class UtilisateursModel extends Model
 {
 
 	/**
@@ -35,12 +35,12 @@ class UtilisateursModel extends UsersModel
 		$app = getApp();
 
 		$sql = 'SELECT * FROM ' . $this->table . 
-			   ' WHERE ' . $app->getConfig('security_username_property') . ' = :username' . 
+			   ' WHERE ' . $app->getConfig('security_pseudo_property') . ' = :pseudo' . 
 			   ' OR ' . $app->getConfig('security_email_property') . ' = :email LIMIT 1';
 
 		$dbh = ConnectionModel::getDbh();
 		$sth = $dbh->prepare($sql);
-		$sth->bindValue(':username', $usernameOrEmail);
+		$sth->bindValue(':pseudo', $usernameOrEmail);
 		$sth->bindValue(':email', $usernameOrEmail);
 		
 		if($sth->execute()){
@@ -89,12 +89,12 @@ class UtilisateursModel extends UsersModel
 
 	    $app = getApp();
 
-	    $sql = 'SELECT ' . $app->getConfig('security_username_property') . ' FROM ' . $this->table .
-	           ' WHERE ' . $app->getConfig('security_username_property') . ' = :username LIMIT 1';
+	    $sql = 'SELECT ' . $app->getConfig('security_pseudo_property') . ' FROM ' . $this->table .
+	           ' WHERE ' . $app->getConfig('security_pseudo_property') . ' = :pseudo LIMIT 1';
 
 	    $dbh = ConnectionModel::getDbh();
 	    $sth = $dbh->prepare($sql);
-	    $sth->bindValue(':username', $username);
+	    $sth->bindValue(':pseudo', $username);
 	    if($sth->execute()){
 	        $foundUser = $sth->fetch();
 	        if($foundUser){
