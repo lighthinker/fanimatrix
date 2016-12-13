@@ -3,8 +3,8 @@
 namespace Controller;
 
 use \W\Controller\Controller;
-use Model\SalonsModel;
 use \Plasticbrain\FlashMessages\FlashMessages;
+use \Model\UtilisateursModel;
 
 class BaseController extends Controller
 {
@@ -30,6 +30,9 @@ class BaseController extends Controller
 		$this->engine->loadExtension(new \W\View\Plates\PlatesExtensions());
 
 		$app = getApp();
+                
+               $user = $this->getUser();
+               $utilisateursModel = new UtilisateursModel;
 
 		$this->fmsg = new FlashMessages();
 		// Rend certaines données disponibles à tous les vues
@@ -39,7 +42,8 @@ class BaseController extends Controller
 				'w_user' 		  => $this->getUser(),
 				'w_current_route' => $app->getCurrentRoute(),
 				'w_site_name'	  => $app->getConfig('site_name'),
-				'fmsg'			  => $this->getFlashMessenger()
+				'fmsg'			  => $this->getFlashMessenger(),
+                                'role'              => $utilisateursModel->find($user['id'])
 			]
 		);
 		
