@@ -16,8 +16,7 @@ class HomeController extends BaseController
 	public function home()
 	{
                 $articlesModel = new ArticleModel();
-             
-                
+                            
                 $commentairesModel = new CommentaireModel();
                 
                 $commentaires = $commentairesModel->findAll();
