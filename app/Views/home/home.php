@@ -6,79 +6,23 @@
 
  	<section id="articles">
 
-                                    <h2>Articles</h2>
-                                        
-                                      <?php foreach ($articles as $article) : ?>
-                                            <article class="black_background"><a href="#">                                   
-                                                <img src="<?php echo $this->assetUrl($this->e('uploads/'.$article['image'])); ?>"></a>
-                                                <a href="#"><h3><?php echo $this->e($article['titre']); ?></h3></a>
-                                                <p><?php echo $this->e($article['contenu']); ?>
-                                                </p>
-                                            </article>
-                                        <?php endforeach; ?>
-    
-				
-					<article class="black_background"><a href="article_sony.html">
-						<img src="img/matrixselfie.jpg"></a>
-						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-						tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-						quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-						consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-						cillum dolore eu fugiat nulla pariatur. 
-						</p>
-					</article>
+            <h2>Articles</h2>
 
-					<article class="black_background"><a href="">
-						<img src="img/matrix1.jpg"></a>
-						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-						tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-						quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-						consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-						cillum dolore eu fugiat nulla pariatur.
-						</p>
-					</article>
+              <?php foreach ($articles as $article) : ?>
+               
+                    <article class="black_background"><a href="#"> 
+                            <i class="fa fa-square" aria-hidden="true"></i>
+                            <?php if ($role['role'] == 'architecte') : ?>
+                            <span><?php echo '#'.$this->e($article['id'].'  ');?></span><span><a href="<?php echo $this->url('delete_article', ['id' =>$article['id']]) ?>">supprimer  </a></span><a href="">modifier  </a></span>
+                            <?php endif; ?>
+                        <img src="<?php echo $this->assetUrl($this->e('uploads/'.$article['image'])); ?>"></a>
+                        <a href="#"><h3><?php echo $this->e($article['titre']); ?></h3></a>
+                        <p><?php echo $this->e($article['contenu']); ?>
+                        </p>
+                    </article>
+                <?php endforeach; ?>                             
 
-					<article class="black_background"><a href="">
-						<img src="img/matrix2.jpg"></a>
-						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-						tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-						quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-						consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-						cillum dolore eu fugiat nulla pariatur. 
-						</p>
-					</article>
-
-					<article class="black_background"><a href="">
-						<img src="img/matrix3.jpg"></a>
-						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-						tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-						quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-						consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-						cillum dolore eu fugiat nulla pariatur.
-						</p>
-					</article>
-
-					<article class="black_background"><a href="">
-						<img src="img/trinity.png"></a>
-						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-						tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-						quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-						consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-						cillum dolore eu fugiat nulla pariatur. 
-						</p>
-					</article>
-
-					<article class="black_background"><a href="">
-						<img src="img/choixpilule.png"></a>
-						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-						tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-						quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-						consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-						cillum dolore eu fugiat nulla pariatur.
-						</p>
-					</article>                                  
-
-				</section>
+	</section>
 			
                  
        

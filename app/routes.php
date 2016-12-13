@@ -7,5 +7,6 @@
                 ['GET|POST', '/post-message', 'Message#postMessage', 'message'],
                 ['GET|POST', '/maMatrice', 'Utilisateur#actionProfil', 'profil'],
                 ['GET|POST', '/home', 'Home#home', 'home'],
-                ['GET|POST', '/article', 'Article#ajoutArticle', 'add_article'] 
+                ['GET|POST', '/article', 'Article#ajoutArticle', 'add_article'],
+                ['GET|POST', '/article/[i:id]/', 'Article#supprimerArticle', 'delete_article']
 	);

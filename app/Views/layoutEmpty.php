@@ -8,6 +8,7 @@
 		<!-- $this->assetUrl('css/style.css') vaudra 'assets/css/style.css' -->
         <link rel="stylesheet" href="<?php echo $this->assetUrl('css/reset.css'); ?>" type="text/css" />
         <link rel="stylesheet" href="<?php echo $this->assetUrl('css/style.css'); ?>" type="text/css" />
+       
     </head>
     <body>
 
@@ -15,7 +16,7 @@
 			<h1><?php echo $this->e($title); ?></h1>
 		</header>
 		<main>
-
+                   
 			<section>
                             
 				<?= $this->section('main_content') ?>

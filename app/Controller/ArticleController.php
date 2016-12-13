@@ -5,6 +5,7 @@ namespace Controller;
 use Controller\BaseController;
 use \Respect\Validation\Validator as v;
 use \Respect\Validation\Exceptions\ValidationException;
+use \Model\ArticleModel;
 
 Class ArticleController extends BaseController {
     
@@ -156,16 +157,26 @@ Class ArticleController extends BaseController {
                                             $auth->logUserIn($userInfos);
                                     }
 
-                                    $this->redirectToRoute('default_home');
+                                    $this->redirectToRoute('home');
                             }
                         }
 		}
 		
 		$this->show('article/article',  array('datas' => $datas));
         }
-    
-   public function actionArticle(){
-       $this->show('article/article');
-   } 
+        
+        public function supprimerArticle($id){
+            
+            $articleModel = New ArticleModel();
+           
+          $articleModel->delete($id);
+           
+           $this->redirectToRoute('home');
+           
+        }
+        
+        public function actionArticle(){
+            $this->show('article/article');
+        } 
     
 }

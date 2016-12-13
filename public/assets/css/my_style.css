@@ -45,6 +45,10 @@ header{
 
 }
 
+.fa fa-square{
+    color : white;
+}
+
 .colorAll{
 	background-color: rgba(4, 4, 4, .9);
 	max-width: 95rem;
