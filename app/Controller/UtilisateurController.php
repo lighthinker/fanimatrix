@@ -46,7 +46,7 @@ class UtilisateurController extends BaseController
 				$this->getFlashMessenger()->error('Veuillez entrer un pseudo');
 			}
 			// je vérifie la non-vacuité du mot de passe en POST
-			if( empty($_POST['mot_de_passe'])) {
+			if( empty($_POST['mdp'])) {
 				// si le mot de passe est vide on ajoute un message d'erreur
 				$this->getFlashMessenger()->error('Veuillez entrer un mot de passe');
 			}
@@ -55,7 +55,7 @@ class UtilisateurController extends BaseController
 			
 			if( ! $this->getFlashMessenger()->hasErrors()) {
 				// vérification de l'existence de l'utilisateur
-				$idUser = $auth->isValidLoginInfo($_POST['pseudo'], $_POST['mot_de_passe']);
+				$idUser = $auth->isValidLoginInfo($_POST['pseudo'], $_POST['mdp']);
 				
 				// si l'utilisateur existe bel et bien...
 				if($idUser !== 0){
@@ -124,7 +124,7 @@ class UtilisateurController extends BaseController
 				
 				'email' => $emailValidator,
 				
-				'mot_de_passe' => v::length(3,50)
+				'mdp' => v::length(3,50)
 					->alnum()
 					->noWhiteSpace()
 					->setName('Mot de passe'),
@@ -199,7 +199,7 @@ class UtilisateurController extends BaseController
 				
 				$auth = new AuthentificationModel(); 
 				
-				$datas['mot_de_passe'] = $auth->hashPassword($datas['mot_de_passe']);
+				$datas['mdp'] = $auth->hashPassword($datas['mdp']);
 				
 				// on déplace l'avatar vers le dossier avatars
 				
@@ -222,7 +222,7 @@ class UtilisateurController extends BaseController
 				
 				unset($datas['send']);
 				
-				if($user) {
+				/*if($user) {
 					// UPDATE utilisateurs SET ... WHERE id = ...
 					$utilisateursModel->update($datas, $user['id']);
 					$auth = new AuthentificationModel();
@@ -230,12 +230,12 @@ class UtilisateurController extends BaseController
 					if( ! $auth->refreshUser()) {
 						$this->getFlashMessenger()->warning('Nous n\'avons pas été en mesure de vous reconnecter');
 					}
-				} else {
+				} else {*/
 					$this->getFlashMessenger()->success('Vous vous êtes bien inscrit à la matrice !');
                                         var_dump($datas); 
 					$userInfos = $utilisateursModel->insert($datas);
 					$auth->logUserIn($userInfos);
-				}
+				//}
 				
 				$this->redirectToRoute('utilisateur_inscription');
 			}

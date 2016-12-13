@@ -14,10 +14,10 @@
 		<input type="text" name="pseudo" id="pseudo" value="<?php echo isset($datas['pseudo']) ? $datas['pseudo'] : '' ?>"/>
 	</p>
 	<p>
-		<label for="mot_de_passe">
+		<label for="mdp">
 			Mot de passe :
 		</label>
-		<input type="password" name="mot_de_passe" id="mot_de_passe" />
+		<input type="password" name="mdp" id="mdp" />
 	</p>
 	<p>
 		<input type="submit" class="button" value="Me connecter"/>

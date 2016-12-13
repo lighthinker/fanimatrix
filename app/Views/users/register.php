@@ -38,8 +38,8 @@ echo $key;
 		<input type="email" name="email" id="email" value="<?php afficherData('email',$datas); ?>"/>
 	</p>
 	<p>
-		<label for="mot_de_passe">Mot de passe :</label>
-                <input type="password" name="mot_de_passe" id="mot_de_passe" placeholder="au moins 6 caractères" value="<?php afficherData('mot_de_passe',$datas); ?>" />
+		<label for="mdp">Mot de passe :</label>
+                <input type="password" name="mdp" id="mdp" placeholder="au moins 6 caractères" value="<?php afficherData('mot_de_passe',$datas); ?>" />
         </p>
 	<p>
 		<label for="sexe">Sexe :</label>
