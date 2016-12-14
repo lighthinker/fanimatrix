@@ -217,7 +217,17 @@ class UtilisateurController extends BaseController
 					$datas['avatar'] = 'default.png';
 				}
 				
-				
+                                
+                                $longueurKey = 12;
+                                $key = "";
+                                for ($i = 1; $i < $longueurKey; $i++) {
+                                    $key .= mt_rand(0, 9);
+                                }
+                                $datas['confirmkey'] = $key;
+                                        
+                                
+			
+                                 
 				$utilisateursModel = new UtilisateursModel();
 				
 				unset($datas['send']);
@@ -231,10 +241,31 @@ class UtilisateurController extends BaseController
 						$this->getFlashMessenger()->warning('Nous n\'avons pas été en mesure de vous reconnecter');
 					}
 				} else {*/
-					$this->getFlashMessenger()->success('Vous vous êtes bien inscrit à la matrice !');
-                                        var_dump($datas); 
-					$userInfos = $utilisateursModel->insert($datas);
-					$auth->logUserIn($userInfos);
+                                $this->getFlashMessenger()->success('Vous vous êtes bien inscrit dans la matrice !');
+                                var_dump($datas); 
+                                $userInfos = $utilisateursModel->insert($datas);
+                                
+                                //$confirMail = $this->show('users/confirmation', array('pseudo' => $datas['pseudo'], 'key' => $key));
+                                
+                                $header="MIME-Version: 1.0\n";
+                                $header.='From:"Matrix"<support@èutyutyut.com>'."\n";
+                                $header.='Content-Type:text/html; charset="utf-8"'."\n";
+                                $header.='Content-Transfer-Encoding: 8bit';
+
+                                $message='
+                                <html>
+                                        <body>
+                                                <div align="center">
+                                                        <a href="http://localhost/matrix/public/confirmation/'.$datas['pseudo'].'">Confirmez votre compte </a>
+                                                </div>
+                                        </body>
+                                </html>
+                                ';
+
+                                mail($datas['email'], "Confirmation de compte", $message, $header);
+                             
+                                
+                                $auth->logUserIn($userInfos);
 				//}
 				
 				$this->redirectToRoute('utilisateur_inscription');

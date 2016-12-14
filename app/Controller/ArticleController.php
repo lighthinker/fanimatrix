@@ -165,13 +165,18 @@ Class ArticleController extends BaseController {
         
         public function modifierArticle($id){
             
-            
+            $monUser = $this->getUser();
             if(!empty($_POST)){
                 $datas = $_POST;
+                if(!empty($statut)){
+                    $datas['statut']= 'valide';
+                }
+                unset($datas['send']);
                 $articleModel = New ArticleModel();
                 // UPDATE utilisateurs SET ... WHERE id = ...
-                $articleModel->update($datas, $user['id']);               
+                $articleModel->update($datas, $monUser['id']);               
                 unset($_POST);
+                $this->redirectToRoute('home');
             }else{
             /*$auth = new AuthentificationModel();
             $this->getFlashMessenger()->success('Vous avez bien mis à jour votre profil');
@@ -185,6 +190,20 @@ Class ArticleController extends BaseController {
                 $this->show('article/modifarticle', ['article' =>$article]);
             }
         }
+        
+        
+            public function valideArticle($id){
+                
+                    
+         
+                $articleModel = New ArticleModel();
+                // UPDATE utilisateurs SET ... WHERE id = ...
+                $articleModel->updateArticle($id);               
+                
+               $this->redirectToRoute('home');
+        
+        }
+                
                 
         
 }
