@@ -68,7 +68,7 @@ class UtilisateurController extends BaseController
 					
 					// une fois l'utilisateur connecté, je le redirige vers l'accueil
 					$this->getFlashMessenger()->success('Vous vous êtes connecté avec succès !');
-					$this->redirectToRoute('default_home');
+					$this->redirectToRoute('home');
 				} else {
 					// les infos de connexion sont incorrectes, on avertit 
 					// l'utilisateur

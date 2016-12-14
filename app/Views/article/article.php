@@ -4,45 +4,49 @@
     <video autoplay loop poster="backvid.jpg" id="vid">
         <source src="backvid.webm" type="video/webm">
         <source src="backvid.mp4" type="video/mp4">
-        </video>
+    </video>
 
         <!-- <div class="colorAll"> -->	
 
-                <main>
+    <main>
 
-                        <section id="postArt">
+            <section id="postArt">
 
-                                <h2>Publie ton article</h2>
+                    <h2>Publie ton article</h2>
 
-                                        <form action="<?= $this->url($w_current_route) ?>" method="POST" enctype="multipart/form-data">
+                            <form action="<?= $this->url($w_current_route) ?>" method="POST" enctype="multipart/form-data">
 
-                                                <p>
-                                                        <input type="file" name="pic" id="inp" accept="image/*">
-                                                </p>
+                                    <p>
+                                        <input type="file" name="image" id="inp" accept="image/*">
+                                    </p>
 
-                                                <p>
-                                                <label for="titre_article">Titre :</label>
-                                                <input type="text" name="titre_article" id="mot_de_passe" />
-                                                </p>
+                                    <p>
+                                        <input type="hidden" name="id" id="id" value="<?= $w_user['id'] ?>"/>
+                                    </p>
 
-                                                <p>
-                                                <label for="contenu_article"></label>
-                                                <textarea rows="4" cols="50" id="textArea" placeholder="Je tape mon contenu ici !"></textarea>
-                                                </p>
+                                    <p>
+                                        <label for="titre_article">Titre :</label>      
+                                        <input type="text" name="titre" id="titre" />
+                                    </p>
 
-                                                <p>
-                                                <input type="file" id="inp2" name="pic" accept="video/*">
-                                                </p>
+                                    <p>
+                                        <label for="contenu_article"></label>
+                                        <textarea rows="30" cols="70" id="textArea" placeholder="Je tape mon contenu ici !" name="contenu"></textarea>
+                                    </p>
 
-                                                <p>
-                                                <input type="submit" class="button" value="Valider"/>
-                                                </p>
+                                    <p>
+                                        <input type="file" id="inp2" name="video" accept="video/*">
+                                    </p>
 
-                                    </form>
+                                    <p>
+                                        <input type="submit" class="button" value="Ajouter" name="send"/>
+                                    </p>
 
-                        </section>
+                            </form>
 
-                </main>
+            </section>
+
+    </main>
 
 <?php $this->stop('main_content') ?>
 
