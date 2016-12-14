@@ -28,9 +28,7 @@
        
         <?php if($w_user): ?>
         <li>
-                <a class="button" href="<?php echo $this->url('add_article') ?>">
-                        Rédiger un article
-                </a>
+                <a class="button" href="<?php echo $this->url('add_article') ?>">Rédiger un article</a>
         </li>	
         <?php endif; ?>
         
@@ -99,4 +97,9 @@
  <?php $this->stop('side_bar') ?>      
     
     
-    
+ 
+<?php $this->start('link_href')?>
+    <link rel="stylesheet" href="<?= $this->assetUrl('css/my_style.css') ?>">
+<?php $this->stop('link_href')?>
+ 
+                

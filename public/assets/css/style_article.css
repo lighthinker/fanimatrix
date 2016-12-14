@@ -1,0 +1,185 @@
+@import url('https://fonts.googleapis.com/css?family=Source+Code+Pro:400,700');
+
+@import url('https://fonts.googleapis.com/css?family=Architects+Daughter');
+
+html{
+	font-size: 62.5%;
+}
+
+body{
+	background-repeat: no-repeat;
+	background-color: rgb(4, 4, 4);
+	font-size: 1.3rem;
+	text-align: center;
+	color: #76FF03;
+	font-family: 'Source Code Pro', monospace;
+}
+
+video#vid{
+  position: fixed; 
+  bottom: 0;
+  min-width: 100%; 
+  min-height: 100%;
+  width: auto; 
+  height: auto; 
+  z-index: -100;
+  background: url(backvid.jpg) no-repeat;
+  background-size: cover;
+}
+
+video{
+	display: block;
+}
+
+main, footer{
+	max-width: 55rem;
+	margin: auto;
+}
+
+main{
+	margin-top: 25rem;
+	max-width: 55rem;
+}
+
+.colorAll{
+	background-color: rgba(4, 4, 4, .9);
+	max-width: 75rem;
+	margin: auto;
+	padding: 1.3rem;
+
+	-webkit-box-shadow: 0 0 .5rem #76FF03;
+	box-shadow: 0 0 .5rem #76FF03;
+}
+
+a{
+	text-decoration: none;
+	color: #76FF03;
+	-webkit-transition: all .3s;
+	transition: all .3s;
+}
+
+#postArt{
+	width: 100%;
+	color: white;
+	background-color: rgba(4, 4, 4, .9);
+	-webkit-box-shadow: 0 0 .5rem #76FF03;
+	box-shadow: 0 0 .5rem #76FF03;
+	margin-right: .1rem;
+}
+
+form p{
+	color: #76FF03;
+	margin-bottom: 1.5rem;
+}
+
+.button, #inp, #inp2{
+	color: #76FF03;
+	border: none;
+	background-color: black;
+	border: .1rem solid rgba(255, 255, 255, .3);
+
+	-webkit-transition: all .3s;
+	transition: all .3s;
+}
+
+.button{
+	margin-bottom: 3rem;
+}
+
+.button:hover{
+	color: black;
+	background-color: #76FF03; 
+	cursor: pointer;
+}
+
+#inp{
+	background-color: black;
+	color: #76FF03;
+}
+
+#inp2{
+	background-color: black;
+	color: #76FF03;
+}
+
+#inp:hover{
+	color: black;
+	background-color: #76FF03; 
+	cursor: pointer;
+}
+
+#inp2:hover{
+	color: black;
+	background-color: #76FF03; 
+	cursor: pointer;
+}
+
+#textArea{
+	background-color: black;
+	color: #76FF03; 
+}
+
+#mot_de_passe{
+	background-color: black;
+	color: #76FF03;
+	border: solid .1rem grey;
+}
+
+h2{
+	color: #76FF03;
+	font-size: 3rem;
+	margin-bottom: 3rem;
+	padding-top: 3rem;
+	font-family: 'Architects Daughter', cursive;
+}
+
+footer{
+	background-color: rgba(4, 4, 4, .7);
+	font-size: 1.2rem;
+	padding: 0 1.3rem;
+	max-width: 55rem;
+	margin-top: 1rem;
+
+	-webkit-box-shadow: 0 0 .5rem #76FF03;
+	box-shadow: 0 0 .5rem #76FF03;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media screen and (max-device-width: 800px) {
+
+	html { 
+		background: url(backvid.jpg) #000 no-repeat center center fixed; 
+	}
+	#vid { 
+		display: none; 
+	}
+}
+
+
+
+@media screen and (min-width:300px) {
+		
+		
+
+}
+
+
+
+	
+
+
+
