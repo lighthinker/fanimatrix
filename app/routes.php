@@ -10,5 +10,6 @@
                 ['GET|POST', '/article', 'Article#ajoutArticle', 'add_article'],
                 ['GET|POST', '/supprArticle/[i:id]/', 'Article#supprimerArticle', 'delete_article'],
                 ['GET|POST', '/modifArticle/[i:id]/', 'Article#modifierArticle', 'modification_article'],
+                ['GET|POST', '/valideArticle/[i:id]/', 'Article#valideArticle', 'valide_article']
                    
 	);

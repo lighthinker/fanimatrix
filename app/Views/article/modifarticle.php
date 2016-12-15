@@ -15,8 +15,9 @@
                     <h2>Publie ton article</h2>
                     <?php var_dump('voici l\'id de l\'article: '.$article['id']); ?>
                     <?= $this->url('modification_article',['id'=>$article['id']])?>
-
-                            <form action="<?= $this->url($w_current_route) ?>" method="POST" enctype="multipart/form-data">
+                            
+                        
+                            <form action="<?= $this->url(('modification_article'), ['id'=>$article['id']]) ?>" method="POST" enctype="multipart/form-data">
                                     
                                     <p>
                                         <input type="hidden" name="id_user" id="id" value="<?= $w_user['id'] ?>"/>

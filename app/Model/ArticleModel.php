@@ -49,6 +49,19 @@ class ArticleModel Extends Model
 
 		return false;
    }
-       
+   
+   
+       public function updateArticle($id){
+           
+           $sql = 'UPDATE '. $this->table . ' SET statut =\'valide\'  WHERE id = :id';
+
+           $dbh = ConnectionModel::getDbh();
+		$sth = $dbh->prepare($sql);
+		$sth->bindValue(':id', $id);		
+		$sth->execute();
+		
+		}
+
+		
    
 }
