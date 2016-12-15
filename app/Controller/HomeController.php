@@ -28,7 +28,7 @@ class HomeController extends BaseController
                 $userRole = $role_utilisateur->getRole($myUser['id']);
                 
                 
-                if( $userRole[0]['role'] == 'architecte'){
+                if( $userRole['role'] == 'architecte'){
                     $articles = $articlesModel->findAll();
                 } else{
                     $articles = $articlesModel->getValidatedArticle();

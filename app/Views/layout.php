@@ -13,7 +13,7 @@
 		</header>
             
             <div><?php echo 'Pseudo : '.$w_user['pseudo']?></div>
-            <div><?php echo 'role : '.$role['role']?></div>
+            <div><?php echo 'Rôle : '.$role['role']?></div>
 
 		<section>
 			<?= $this->section('main_content') ?>

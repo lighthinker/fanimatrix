@@ -14,7 +14,7 @@
 
                     <h2>Publie ton article</h2>
                     <?php var_dump('voici l\'id de l\'article: '.$article['id']); ?>
-                    <?php if (!empty($article)){echo $this->url('modification_article',['id'=>$article['id']]);}else {echo $this->url($w_current_route);} ?>
+                    <?= $this->url('modification_article',['id'=>$article['id']])?>
 
                             <form action="<?= $this->url($w_current_route) ?>" method="POST" enctype="multipart/form-data">
                                     
@@ -45,7 +45,7 @@
                                     </p>
 
                                     <p>
-                                        <input type="submit" class="button" value="Ajouter" name="send"/>
+                                        <input type="submit" class="button" value="Modifier" name="send"/>
                                     </p>
 
                             </form>

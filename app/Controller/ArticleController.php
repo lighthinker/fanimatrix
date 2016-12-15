@@ -131,20 +131,20 @@ Class ArticleController extends BaseController {
                                     } else {
                                             $datas['image'] = 'default_article.png';
                                     }
-                                    var_dump($datas);
-                                    die();
+                                    
                                     // On passe dans l'insertion
                                     $articlesModel = new ArticleModel();
 
                                     unset($datas['send']);
-
+                              
                              
                                     
                                     $this->getFlashMessenger()->success('Vous avez bien ajouter un article !');
                                     $articleInfos = $articlesModel->insert($datas);
                                     
-
+                                    unset($_POST);
                                     $this->redirectToRoute('home');
+                                    
 //                            }
                         }
 		}
@@ -161,9 +161,30 @@ Class ArticleController extends BaseController {
            $this->redirectToRoute('home');
            
         }
+               
         
-        public function actionArticle(){
-            $this->show('article/article');
-        } 
-    
+        public function modifierArticle($id){
+            
+            
+            if(!empty($_POST)){
+                $datas = $_POST;
+                $articleModel = New ArticleModel();
+                // UPDATE utilisateurs SET ... WHERE id = ...
+                $articleModel->update($datas, $user['id']);               
+                unset($_POST);
+            }else{
+            /*$auth = new AuthentificationModel();
+            $this->getFlashMessenger()->success('Vous avez bien mis à jour votre profil');
+            if( ! $auth->refreshUser()) {
+                    $this->getFlashMessenger()->warning('Nous n\'avons pas été en mesure de vous reconnecter');*/
+            //}
+            
+                $articleModel = New ArticleModel();
+                $article = $articleModel->find($id);
+                
+                $this->show('article/modifarticle', ['article' =>$article]);
+            }
+        }
+                
+        
 }

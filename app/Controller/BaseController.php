@@ -43,8 +43,9 @@ class BaseController extends Controller
 				'w_current_route' => $app->getCurrentRoute(),
 				'w_site_name'	  => $app->getConfig('site_name'),
 				'fmsg'			  => $this->getFlashMessenger(),
-                                'role'              => $utilisateursModel->find($user['id'])
+                                'role'              => $utilisateursModel->getRole($user['id']) //find($user['id'])
 			]
+                        
 		);
 		
 	}

@@ -25,7 +25,7 @@ class UtilisateursModel extends UsersModel{
 		
 		
 		if($sth->execute()){
-			$foundArticles = $sth->fetchAll();
+			$foundArticles = $sth->fetch();
 			if($foundArticles){
 				return $foundArticles;
 			}
